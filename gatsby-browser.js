@@ -5,3 +5,6 @@
  */
 
 // You can delete this file if you're not using it
+
+// CSS Styling
+import "bootstrap/dist/css/bootstrap.min.css"

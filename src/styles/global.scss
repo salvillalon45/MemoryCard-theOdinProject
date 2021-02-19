@@ -1,0 +1,138 @@
+/* ----------------------------------------------- */
+/* 
+/* Styling for the entire app */
+/* 
+/* ----------------------------------------------- */
+
+/* Fonts */
+/* ----------------------------------------------- */
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Source+Sans+Pro&display=swap');
+
+// Color Variables
+// -----------------------------------------------
+$purple: #5d4d9d;
+$grey: #c2ccd2;
+$lightGrey: #edeef6;
+$black: #2f2d2c;
+
+/* Components */
+/* ----------------------------------------------- */
+@import '../components/components.scss';
+
+html,
+body,
+#gatsby-focus-wrapper,
+.root {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	height: 100%;
+	// background-color: $grey;
+}
+
+#gatsby-focus-wrapper,
+.root,
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
+	// margin: 0 auto;
+	// margin-top: 50px;
+	// background-color: $lightGrey;
+	// padding: 55px;
+	// border-radius: 15px;
+}
+
+/* Text Styling and Colors */
+/* ----------------------------------------------- */
+// .whiteText {
+// 	color: $lightGrey;
+// }
+
+// .blackText {
+// 	color: $black;
+// }
+
+// .redText {
+// 	color: red;
+// }
+
+// .boldText {
+// 	font-weight: bold;
+// }
+
+// Text Sizes
+// -----------------------------------------------
+// .purpleBackground {
+// 	background-color: $purple;
+// }
+
+// .greyBackground {
+// 	background-color: $grey;
+// }
+
+// .lightGreyBackground {
+// 	background-color: $lightGrey;
+// }
+
+/* Text Sizes */
+/* ----------------------------------------------- */
+// .text15 {
+// 	font-size: 1.5rem;
+// }
+
+// .text29 {
+// 	font-size: 2.9rem;
+// }
+
+/* Text Fonts */
+/* ----------------------------------------------- */
+// .openSansText {
+// 	font-family: 'Open Sans', sans-serif;
+// }
+
+// .sourceText {
+// 	font-family: 'Source Sans Pro', sans-serif;
+// }
+
+/* Buttons */
+/* ----------------------------------------------- */
+// .buttonContainer {
+// 	button {
+// 		font-family: 'Source Sans Pro';
+// 	}
+// }
+
+// .btn-primary.disabled,
+// .btn-primary:disabled,
+// .btn-primary:not(:disabled):not(.disabled):active:focus,
+// .btn-primary:active,
+// .btn-primary:not(:disabled):not(.disabled):active,
+// .btn-primary:focus,
+// .btn-primary {
+// 	background-color: $purple;
+// 	border-color: $purple;
+// }
+
+// .btn-primary:hover {
+// 	background-color: #47418e;
+// 	border-color: $purple;
+// }
+
+/* Forms */
+/* ----------------------------------------------- */
+// .form-control:focus {
+// 	color: $black;
+// 	background-color: #fff;
+// 	border-color: $purple;
+// 	outline: 0;
+// 	box-shadow: 0 0 0 0.2rem #5d4d9d;
+// }
+
+// .formButtonContainers {
+// 	display: flex;
+// 	justify-content: space-evenly;
+// }

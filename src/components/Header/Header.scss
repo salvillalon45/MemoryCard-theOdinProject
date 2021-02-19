@@ -1,0 +1,24 @@
+/* ----------------------------------------------- */
+/* 
+/* Header Styling */
+/* 
+/* ----------------------------------------------- */
+
+nav {
+	a {
+		color: $lightGrey;
+	}
+}
+
+.navbar-light .navbar-text {
+	color: $lightGrey;
+}
+
+.navbar-light .navbar-brand {
+	color: $lightGrey;
+}
+
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
+	color: $lightGrey;
+}

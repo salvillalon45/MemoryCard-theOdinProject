@@ -1,0 +1,21 @@
+/* ----------------------------------------------- */
+/* 
+/* Footer Styling */
+/* 
+/* ----------------------------------------------- */
+
+.footerContainer {
+	display: flex;
+	justify-content: space-evenly;
+	flex-shrink: 0;
+	height: 7%;
+	margin-top: 60px;
+
+	a {
+		color: $lightGrey;
+	}
+
+	p {
+		padding-top: 12px;
+	}
+}
