@@ -10,27 +10,21 @@
 
 // React
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
-// Gatsby
-// import { useStaticQuery, graphql } from 'gatsby';
-
-// Styling
-// import './Layout.css';
 
 // Components
 import Header from '../Header';
 import Footer from '../Footer';
+import MemoryGame from '../MemoryGame';
 // -----------------------------------------------
 
 function Layout({ children }) {
-	console.table(children);
 	return (
 		<>
 			<Header />
 
-			<main>{children}</main>
+			{/* <main>{children}</main> */}
+			<MemoryGame />
 
 			<Footer />
 		</>
