@@ -9,7 +9,7 @@
 // Imports
 
 // React
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 
 // Components
@@ -28,54 +28,69 @@ import { createCardsState } from '../MemoryGameUtil.js';
 function GameBoard(props) {
 	const { level } = props;
 	// const [cardsIndex, setCardsIndex] = useState(createCardsState(level));
+	const [cards, setCards] = useState([]);
 	const [cardsIndex, _setCardsIndex] = useState({
 		card0: 0,
 		card1: 0,
 		card2: 0,
 		card3: 0
 	});
-	const [cards, setCards] = useState([]);
 	const cardsIndexRef = useRef(cardsIndex);
 	const setCardsIndex = cardName => {
+		console.log('Inside setCardsIndex()');
+		console.log('What is cardName:: ');
+		console.log(cardName);
+		console.log('What is cardIndexRefCurrent');
 		console.log(cardsIndexRef);
+		console.log(cardsIndexRef.current[cardName]);
 		// shipsRef.current[shipName][1] = shipAvailability;
 		cardsIndexRef.current[cardName] = 1;
 		_setCardsIndex({ ...cardsIndexRef.current });
 	};
 
-	useEffect(() => {
-		// createCardsState();
-		generateCards();
-	}, []);
+	function handleCardClicked(cardName, id) {
+		console.log('Inside handleCardClicke()');
 
-	function handleCardClicked(cardName) {
 		console.log({ cardName });
-		// console.log(cardsIndexRef.current[cardName]);
-		console.log(cardsIndex);
-		console.log(cardsIndex[cardName]);
-		setCardsIndex({
-			...cardsIndex,
-			[cardName]: 1
-		});
+		// console.log(cardsIndex);
+		console.log(id);
+		// IF ID IS 1 then end game!
+		// console.log(cardsIndex[cardName]);
+		// console.table(cardsIndex);
+		// setCardsIndex({
+		// 	...cardsIndex,
+		// 	[cardName]: 1
+		// });
+		setCardsIndex(
+			cardName
+			// [cardName]: 1
+		);
 	}
 
-	function generateCards() {
-		console.log('Inside generateCards');
-		// const cardsArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	function determineFlag(cardName) {
+		console.log('Insider determineFlag()');
+		if (cardsIndexRef.current[cardName] === 1) {
+			console.log('CliCKED');
+			return 'clicked';
+		}
+		console.log('NONE');
+		return '';
+	}
+
+	function renderCards() {
 		const cardsArr = Array.from(Array(level).keys());
-		console.log(cardsArr);
 		const result = cardsArr.map((card, index) => {
 			const cardName = 'card' + index;
+			const id = cardsIndex[cardName];
 
 			return (
 				<Card
 					onClick={() => {
-						// console.log(cardsIndex);
-						handleCardClicked(cardName);
+						handleCardClicked(cardName, id);
 					}}
 					key={index}
 					className={cardName}
-					// id={cardsIndex[index]}
+					id={id}
 				>
 					<Card.Img src='https://cdn.bulbagarden.net/upload/thumb/4/44/701Hawlucha.png/600px-701Hawlucha.png' />
 
@@ -89,6 +104,10 @@ function GameBoard(props) {
 		setCards(result);
 	}
 
+	useEffect(() => {
+		renderCards();
+	}, [cardsIndex]);
+
 	// function setUpEventListeners() {
 	// 	const gameCellArray = Array.from(document.querySelectorAll('.card'));
 
@@ -98,13 +117,14 @@ function GameBoard(props) {
 	// 		cell.addEventListener('click', function (event) {
 	// 			event.stopImmediatePropagation();
 	// 			console.log('hi');
-	// 			console.log(cell);
-	// 			cell.classList.remove('notClicked');
+	// 			console.log(cell.classList[0]);
+	// 			// cell.classList.remove('notClicked');
+	// 			handleCardClicked(cell.classList[0]);
 	// 		});
 	// 	}
 	// }
 
-	// // This helps us re-render the component so that I can add the event listeners
+	// // // This helps us re-render the component so that I can add the event listeners
 	// useLayoutEffect(() => {
 	// 	setUpEventListeners();
 	// });
