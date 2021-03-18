@@ -10,4 +10,33 @@ function createCardsState(level) {
 	return cardObj;
 }
 
-export { createCardsState };
+function determineGameOver(id) {
+	if (id === 1) {
+		return true;
+	}
+
+	return false;
+}
+
+function checkAdvanceLevel(cardsIndex) {
+	let total = 1;
+
+	for (const cardName in cardsIndex) {
+		console.log(cardsIndex[cardName]);
+		const cardAvailability = cardsIndex[cardName];
+
+		if (cardAvailability === 1) {
+			total += 1;
+		}
+	}
+
+	if (total === Object.entries(cardsIndex).length) {
+		console.log({ total });
+		console.log(Object.entries(cardsIndex).length);
+		return true;
+	}
+
+	return false;
+}
+
+export { createCardsState, determineGameOver, checkAdvanceLevel };

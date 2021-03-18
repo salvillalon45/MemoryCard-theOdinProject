@@ -13,6 +13,7 @@ import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 
 // Components
+import PopUp from '../../PopUp';
 
 // Bootstrap
 import Row from 'react-bootstrap/Row';
@@ -23,58 +24,28 @@ import CardColumns from 'react-bootstrap/CardColumns';
 
 // -----------------------------------------------
 // Imports
-import { createCardsState } from '../MemoryGameUtil.js';
+import {
+	createCardsState,
+	determineGameOver,
+	checkAdvanceLevel
+} from '../MemoryGameUtil.js';
 
 function GameBoard(props) {
 	const { level } = props;
-	// const [cardsIndex, setCardsIndex] = useState(createCardsState(level));
+	const [cardsIndex, _setCardsIndex] = useState(createCardsState(level));
 	const [cards, setCards] = useState([]);
-	const [cardsIndex, _setCardsIndex] = useState({
-		card0: 0,
-		card1: 0,
-		card2: 0,
-		card3: 0
-	});
+	const [gameCheck, setGameCheck] = useState(false);
 	const cardsIndexRef = useRef(cardsIndex);
-	const setCardsIndex = cardName => {
-		console.log('Inside setCardsIndex()');
-		console.log('What is cardName:: ');
-		console.log(cardName);
-		console.log('What is cardIndexRefCurrent');
-		console.log(cardsIndexRef);
-		console.log(cardsIndexRef.current[cardName]);
-		// shipsRef.current[shipName][1] = shipAvailability;
-		cardsIndexRef.current[cardName] = 1;
+	const setCardsIndex = (cardName, value) => {
+		cardsIndexRef.current[cardName] = value;
 		_setCardsIndex({ ...cardsIndexRef.current });
 	};
 
 	function handleCardClicked(cardName, id) {
-		console.log('Inside handleCardClicke()');
-
-		console.log({ cardName });
-		// console.log(cardsIndex);
-		console.log(id);
-		// IF ID IS 1 then end game!
-		// console.log(cardsIndex[cardName]);
-		// console.table(cardsIndex);
-		// setCardsIndex({
-		// 	...cardsIndex,
-		// 	[cardName]: 1
-		// });
-		setCardsIndex(
-			cardName
-			// [cardName]: 1
-		);
-	}
-
-	function determineFlag(cardName) {
-		console.log('Insider determineFlag()');
-		if (cardsIndexRef.current[cardName] === 1) {
-			console.log('CliCKED');
-			return 'clicked';
-		}
-		console.log('NONE');
-		return '';
+		const gameCheck = determineGameOver(id);
+		console.log({ gameCheck });
+		setGameCheck(gameCheck);
+		setCardsIndex(cardName, 1);
 	}
 
 	function renderCards() {
@@ -92,10 +63,12 @@ function GameBoard(props) {
 					className={cardName}
 					id={id}
 				>
-					<Card.Img src='https://cdn.bulbagarden.net/upload/thumb/4/44/701Hawlucha.png/600px-701Hawlucha.png' />
+					{/* <Card.Img src='https://cdn.bulbagarden.net/upload/thumb/4/44/701Hawlucha.png/600px-701Hawlucha.png' /> */}
+					{/* <Card.Img src='https://cdn.bulbagarden.net/upload/thumb/4/44/701Hawlucha.png/600px-701Hawlucha.pn /> */}
 
 					<Card.Body>
 						<Card.Title>Hawlucha</Card.Title>
+						<Card.Title>{index}</Card.Title>
 					</Card.Body>
 				</Card>
 			);
@@ -108,30 +81,38 @@ function GameBoard(props) {
 		renderCards();
 	}, [cardsIndex]);
 
-	// function setUpEventListeners() {
-	// 	const gameCellArray = Array.from(document.querySelectorAll('.card'));
+	// determine next step
+	useEffect(() => {
+		// Determine all cards have id of 1
+		if (gameCheck === false && checkAdvanceLevel(cardsIndex)) {
+			console.log('Ready');
+		}
+	});
 
-	// 	for (let i = 0; i < gameCellArray.length; i++) {
-	// 		const cell = gameCellArray[i];
+	// Used to reset the game
+	useEffect(() => {
+		if (gameCheck) {
+			const newCardsState = createCardsState(level);
+			for (const cardName in newCardsState) {
+				setCardsIndex(cardName, 0);
+			}
 
-	// 		cell.addEventListener('click', function (event) {
-	// 			event.stopImmediatePropagation();
-	// 			console.log('hi');
-	// 			console.log(cell.classList[0]);
-	// 			// cell.classList.remove('notClicked');
-	// 			handleCardClicked(cell.classList[0]);
-	// 		});
-	// 	}
-	// }
+			setCards([]);
+		}
+	}, [gameCheck]);
 
-	// // // This helps us re-render the component so that I can add the event listeners
-	// useLayoutEffect(() => {
-	// 	setUpEventListeners();
-	// });
-	// console.table(cardsIndex);
 	return (
 		<Row>
 			<Col>
+				{gameCheck && (
+					<PopUp
+						text='Game Over!'
+						nextStepText='Play Again?'
+						step={1}
+						handleReset={props.handleReset}
+						handleGameCheck={setGameCheck}
+					/>
+				)}
 				<CardColumns>{cards}</CardColumns>
 			</Col>
 		</Row>
