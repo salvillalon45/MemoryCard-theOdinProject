@@ -19,11 +19,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 // -----------------------------------------------
 
-function GameStatus() {
+function GameStatus(props) {
+	const { level } = props;
+
 	return (
 		<Row>
 			<Col>
-				<h1>Choose your next Pokemon! Lvl 5</h1>
+				<h1>Choose your next Pokemon! Lvl {level}</h1>
 			</Col>
 		</Row>
 	);

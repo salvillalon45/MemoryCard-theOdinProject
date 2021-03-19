@@ -21,7 +21,8 @@ import Container from 'react-bootstrap/Container';
 // -----------------------------------------------
 
 function MemoryGame() {
-	const [level, setLevel] = useState(4);
+	const [level, setLevel] = useState(1);
+	const [amountOfCards, setAmountOfCards] = useState(4);
 	const [resetFlag, setResetFlag] = useState(2);
 
 	function handleReset(value) {
@@ -35,11 +36,17 @@ function MemoryGame() {
 			<section>
 				<Container>
 					{/* GAME STATUS */}
-					<GameStatus />
+					<GameStatus level={level} />
 
 					{/* GAME BOARD */}
 					{resetFlag && (
-						<GameBoard level={level} handleReset={handleReset} />
+						<GameBoard
+							amountOfCards={amountOfCards}
+							handleSetAmountOfCards={setAmountOfCards}
+							level={level}
+							handleSetLevel={setLevel}
+							handleReset={handleReset}
+						/>
 					)}
 				</Container>
 			</section>
