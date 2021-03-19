@@ -20,7 +20,7 @@ import GameStatus from './GameStatus';
 import Container from 'react-bootstrap/Container';
 // -----------------------------------------------
 
-function MemoryGame() {
+function MemoryGame(props) {
 	const [level, setLevel] = useState(1);
 	const [amountOfCards, setAmountOfCards] = useState(4);
 	const [resetFlag, setResetFlag] = useState(2);
@@ -46,6 +46,10 @@ function MemoryGame() {
 							level={level}
 							handleSetLevel={setLevel}
 							handleReset={handleReset}
+							currentScore={props.currentScore}
+							handleSetCurrentScore={props.setCurrentScore}
+							bestScore={props.bestScore}
+							handleSetBestScore={props.setBestScore}
 						/>
 					)}
 				</Container>

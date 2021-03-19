@@ -5,7 +5,7 @@ function createCardsState(level) {
 		let cardName = 'card' + i;
 		cardObj[cardName] = 0;
 	}
-	console.log({ cardObj });
+
 	return cardObj;
 }
 
@@ -38,9 +38,16 @@ function checkAdvanceLevel(cardsIndex) {
 function updateCardsIndex(amountOfCards, setCardsIndex) {
 	const newCardsState = createCardsState(amountOfCards);
 	for (const cardName in newCardsState) {
-		console.log({ cardName });
 		setCardsIndex(cardName, 0);
 	}
+}
+
+function determineScore(currentScore, bestScore) {
+	if (currentScore > bestScore) {
+		return currentScore - 1;
+	}
+
+	return bestScore;
 }
 
 /*
@@ -75,5 +82,6 @@ export {
 	determineGameOver,
 	checkAdvanceLevel,
 	updateCardsIndex,
-	shuffleCards
+	shuffleCards,
+	determineScore
 };

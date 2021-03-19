@@ -15,18 +15,18 @@ import React from 'react';
 import Navbar from 'react-bootstrap/NavBar';
 // -----------------------------------------------
 
-function Header() {
+function Header(props) {
 	return (
 		<Navbar className='purpleBackground'>
 			<Navbar.Brand className='openSansText boldText'>
-				The Odin Project: Memory Game with Pokemon!
+				The Odin Project: Memory Game!
 			</Navbar.Brand>
 
 			<Navbar.Toggle />
 
 			<Navbar.Collapse className='justify-content-end'>
 				<Navbar.Text className='lightGreyText openSansText'>
-					Best 0 | High 0
+					Score {props.currentScore} | High {props.bestScore}
 				</Navbar.Text>
 			</Navbar.Collapse>
 		</Navbar>
