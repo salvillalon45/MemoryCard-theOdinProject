@@ -1,99 +1,120 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# theOdinProject-MemoryCard
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+[The Odin Project: Javascript] - Project: Memory Card
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
+# Summary
 
-## 🚀 Quick start
+-   This project was used as an introduction to React Hook and Lifecycle methods. Since I had some exposure to React, I pushed myself:
+    -   To practice creating Reusable components.
+    -   In using semantic tags since I wanted to start creating good accessibility habits
+    -   Use Gatsby to get familiar with this framework
+    -   Continue using Sass
 
-1.  **Create a Gatsby site.**
+# Lessons Learned
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+1. Used Dribbel to get inspiration for the fonts and design of the web app. [Inspiration from Switch](https://dribbble.com/shots/14730009-Switch/attachments/6431406?mode=media). This lead me to creating a style guide.
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
+    - ## 📗 Fonts used
+
+        - Segoe UI
+
+    - ## 🎨 Color Reference
+
+        | Color           | Hex                                                                |
+        | --------------- | ------------------------------------------------------------------ |
+        | Turquoise       | ![#2cd1c7](https://via.placeholder.com/10/2cd1c7?text=+) `#2cd1c7` |
+        | Black           | ![#111029](https://via.placeholder.com/10/111029?text=+) `#111029` |
+        | Yellow          | ![#d1da0e](https://via.placeholder.com/10/d1da0e?text=+) `#d1da0e` |
+        | Turquoise Hover | ![#2fc2b9](https://via.placeholder.com/10/2fc2b9?text=+) `#2fc2b9` |
+
+1. We also practice a lot with using reusable components. I learned how to use new Map(). **The Map object holds key-value pairs and remembers the original insertion order of the keys. THis was really good as it allowed me to create the component for Form reusable**
+
+1. Learned how to use useContext! A big challenge I encountered was that my display components was not getting the most updated props because the componeont was not getting rerendered again. The component was just used to display data and everytime the user added a new work experience, education or skill it will generate a new ResumeRow or ResumeSkill component. This component had no way of getting the most updated props since it was only used for display.
+    1. I learned how useful useContext is since it was solution for my problem!
+    2. Resource [https://medium.com/@guptagaruda/react-hooks-understanding-component-re-renders-9708ddee9928#3e84](https://medium.com/@guptagaruda/react-hooks-understanding-component-re-renders-9708ddee9928#3e84)
+
+You can find more on the project here: [The Odin Project - CV Application](https://www.theodinproject.com/courses/javascript/lessons/cv-application)
+
+5. Learnd the following terms!
+
+    - **Manifest.json:** which provides info about a web app in a json text file necessary for the web app to be downloaded and be presented to the user similarity to a native app
+        - I used when a user adds a web app to their home screen using Chrome and Firefox
+    - **Package.json:** List the project depends on and which versions of a package you project can use
+        - react-scripts is a set of scripts from the create-react-app
+        - It sets up the development environment and starts a server as well as hot module reloading
+    - **Yarn.lock:** This is really important! Yarn needs more information than the dependencind you configure in your package.json.
+        - Yarn needs to store exactly which versions of each dependency were installed
+        - To do this Yarn uses a yarn.lock file in the root of your project
+    - **Hot Module Replacement:** Exchanges, adds, or removes modules while an application is running without a full reload.
+        - Retain application state which is lost during a full reload
+        - Save valuable development time by only updating what has changed
+        - Instantly update the browser when modifications are made to css/js
+    - npm vs yarn
+        - Yarn was created by Facebook since npm was giving them problems
+        - Yarn installation is faster npm
+        - Yarn is more secure than npm
+        - Yarn install multiple packages at once
+        - npm does one at a time
+        - This all changed in npm version 5!
+    - dev dependencies are only used in development environment
+    - The code inside the React Return statement is JSX not html!
+
+6. **Binding and This**
+
+    - Arrow functions are exempt from this behavior because they use lexical this binding which automatically binds them to the scope they are defined in
+    - **Lexical Scope**
+
+        1. Every inner level can access its outer level. Example
+
+        ```jsx
+        void func() {
+        	int x = 5;
+        	void func2() {
+        		printf('%d', x);
+        	}
+        }
+
+        // Here it will print 5 since func2() will look for a an x, but it is not in the func2
+        // So it looks outside its scoop to and finds the 5
+
+        // In React
+        class Foo extends React.Component {
+        	handleClick(event) {
+        		// code
+        	}
+
+        	render() {
+        		return (
+        			<button type='button' onClick={(event) => this.handleClick(event)}/>
+        				Click Me
+        			</button>
+        		);
+        	}
+        }
+
+        // In this example, it will look for handleClick and since it is an arrow function,
+        // it will use lexical scope and find the handleClick inside the class
+        ```
+
+    3. When you do not bind
+
+        1. It looses its implicitly bound context
+        2. It falls back to the default which will be the global object
+
+        Also
+
+    ```jsx
+    <button type='button' onClick={this.handleClick}/>
+    	Click Me
+    </button>
     ```
 
-1.  **Start developing.**
+    1. Here since you did not bind it all! The context was lost after passing the handle as a callback
 
-    Navigate into your new site’s directory and start it up.
+# Technologies:
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
-
-1.  **Open the source code and start editing!**
-
-    Your site is now running at `http://localhost:8000`!
-
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.com/tutorial/part-five/#introducing-graphiql)._
-
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
-
-## 🧐 What's inside?
-
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.com/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.com/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.com/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+-   React
+-   React Bootstrap
+-   Dribble
+-   Sass
+-   Surge.sh

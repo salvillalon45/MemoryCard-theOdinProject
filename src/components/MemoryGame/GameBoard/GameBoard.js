@@ -9,8 +9,7 @@
 // Imports
 
 // React
-import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useEffect, useRef } from 'react';
 
 // Components
 import PopUp from '../../PopUp';
@@ -39,7 +38,6 @@ function GameBoard(props) {
 	const [cardsIndex, _setCardsIndex] = useState(
 		createCardsState(amountOfCards)
 	);
-
 	const [cards, setCards] = useState([]);
 	const [gameCheck, setGameCheck] = useState(false);
 
