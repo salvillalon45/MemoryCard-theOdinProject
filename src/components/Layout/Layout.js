@@ -19,7 +19,6 @@ import MemoryGame from '../MemoryGame';
 // -----------------------------------------------
 
 function Layout({ children }) {
-	// const [level, setLevel] = useState(1);
 	const [currentScore, setCurrentScore] = useState(0);
 	const [bestScore, setBestScore] = useState(0);
 
@@ -27,7 +26,6 @@ function Layout({ children }) {
 		<>
 			<Header currentScore={currentScore} bestScore={bestScore} />
 
-			{/* <main>{children}</main> */}
 			<MemoryGame
 				currentScore={currentScore}
 				setCurrentScore={setCurrentScore}

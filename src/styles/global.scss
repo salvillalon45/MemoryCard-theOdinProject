@@ -10,10 +10,11 @@
 
 // Color Variables
 // -----------------------------------------------
-$purple: #5d4d9d;
-$grey: #c2ccd2;
-$lightGrey: #edeef6;
-$black: #2f2d2c;
+$turquoise: #2cd1c7;
+$white: #ffffff;
+$black: #111029;
+$yellow: #d1da0e;
+$turquoiseHover: #2fc2b9;
 
 /* Components */
 /* ----------------------------------------------- */
@@ -27,7 +28,10 @@ body,
 	padding: 0;
 	box-sizing: border-box;
 	height: 100%;
-	// background-color: $grey;
+	background-color: $black;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-weight: bold;
 }
 
 #gatsby-focus-wrapper,
@@ -39,100 +43,57 @@ body {
 
 main {
 	flex: 1 0 auto;
-	// margin: 0 auto;
-	// margin-top: 50px;
-	// background-color: $lightGrey;
-	// padding: 55px;
-	// border-radius: 15px;
 }
 
 /* Text Styling and Colors */
 /* ----------------------------------------------- */
-// .whiteText {
-// 	color: $lightGrey;
-// }
+.whiteText {
+	color: $white;
+}
 
-// .blackText {
-// 	color: $black;
-// }
+.turquoiseText {
+	color: $turquoise;
+}
 
-// .redText {
-// 	color: red;
-// }
+.yellowText {
+	color: $yellow;
+}
 
-// .boldText {
-// 	font-weight: bold;
-// }
-
-// Text Sizes
-// -----------------------------------------------
-// .purpleBackground {
-// 	background-color: $purple;
-// }
-
-// .greyBackground {
-// 	background-color: $grey;
-// }
-
-// .lightGreyBackground {
-// 	background-color: $lightGrey;
-// }
+.textCenter {
+	text-align: center;
+}
 
 /* Text Sizes */
 /* ----------------------------------------------- */
-// .text15 {
-// 	font-size: 1.5rem;
-// }
+.xLarge {
+	font-size: x-large;
+}
 
-// .text29 {
-// 	font-size: 2.9rem;
-// }
+.xxLarge {
+	font-size: xx-large;
+}
 
-/* Text Fonts */
-/* ----------------------------------------------- */
-// .openSansText {
-// 	font-family: 'Open Sans', sans-serif;
-// }
-
-// .sourceText {
-// 	font-family: 'Source Sans Pro', sans-serif;
-// }
+.xxxLarge {
+	font-size: xxx-large;
+}
 
 /* Buttons */
 /* ----------------------------------------------- */
-// .buttonContainer {
-// 	button {
-// 		font-family: 'Source Sans Pro';
-// 	}
-// }
+.btn-primary.disabled,
+.btn-primary:disabled,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-primary:active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:focus,
+.btn-primary {
+	background-color: $turquoise;
+	border-color: $turquoise;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-weight: bold;
+}
 
-// .btn-primary.disabled,
-// .btn-primary:disabled,
-// .btn-primary:not(:disabled):not(.disabled):active:focus,
-// .btn-primary:active,
-// .btn-primary:not(:disabled):not(.disabled):active,
-// .btn-primary:focus,
-// .btn-primary {
-// 	background-color: $purple;
-// 	border-color: $purple;
-// }
-
-// .btn-primary:hover {
-// 	background-color: #47418e;
-// 	border-color: $purple;
-// }
-
-/* Forms */
-/* ----------------------------------------------- */
-// .form-control:focus {
-// 	color: $black;
-// 	background-color: #fff;
-// 	border-color: $purple;
-// 	outline: 0;
-// 	box-shadow: 0 0 0 0.2rem #5d4d9d;
-// }
-
-// .formButtonContainers {
-// 	display: flex;
-// 	justify-content: space-evenly;
-// }
+.btn-primary:hover {
+	background-color: $turquoiseHover;
+	border-color: $turquoise;
+}

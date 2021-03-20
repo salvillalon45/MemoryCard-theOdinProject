@@ -26,8 +26,6 @@ function MemoryGame(props) {
 	const [resetFlag, setResetFlag] = useState(2);
 
 	function handleReset(value) {
-		console.log('Inside handleReset()');
-		console.log({ value });
 		setResetFlag(value);
 	}
 

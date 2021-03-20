@@ -14,16 +14,14 @@
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.8);
 	z-index: 1;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
 }
 
 .popup {
-	position: fixed;
 	padding: 15px 32px;
 	background-color: #131a3d;
-	top: 50%;
-	left: 50%;
-	margin-top: -103px;
-	margin-left: -207px;
 	box-sizing: border-box;
 	color: white;
 	border-radius: 5px;
@@ -31,5 +29,5 @@
 	border: none;
 	text-align: center;
 	display: inline-block;
-	font-size: 16px;
+	margin: 0 auto;
 }

@@ -73,11 +73,11 @@ function GameBoard(props) {
 						handleCardClicked(cardName, id);
 					}}
 					key={index}
-					className={cardName}
+					className={'text-center ' + cardName}
 					id={id}
 				>
 					<Card.Body>
-						<Card.Title>{index}</Card.Title>
+						<Card.Title className='xxxLarge'>{index}</Card.Title>
 					</Card.Body>
 				</Card>
 			);
@@ -86,6 +86,14 @@ function GameBoard(props) {
 		const shuffledCards = shuffleCards(cardsArray);
 		setCards(shuffledCards);
 	}
+
+	useEffect(() => {
+		if (level === 1) {
+			document.querySelector('.card-columns').classList.add('test');
+		} else {
+			document.querySelector('.card-columns').classList.remove('test');
+		}
+	});
 
 	// This effect depends on the amountOfCards changing. Needed so that we update the state
 	// for cardsIndex
@@ -123,11 +131,11 @@ function GameBoard(props) {
 	}, [gameCheck]);
 
 	return (
-		<Row>
+		<Row id='gameBoardContainer'>
 			<Col>
 				{gameCheck && (
 					<PopUp
-						text='Game Over!'
+						text={'Your score is: ' + props.bestScore}
 						nextStepText='Play Again?'
 						step={1}
 						handleReset={props.handleReset}

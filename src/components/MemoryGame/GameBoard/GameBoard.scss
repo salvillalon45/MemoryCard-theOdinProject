@@ -1,0 +1,17 @@
+/* ----------------------------------------------- */
+/* 
+/* GameBoard Styling */
+/* 
+/* ----------------------------------------------- */
+
+#gameBoardContainer {
+	.card {
+		background-color: unset;
+		border: 6px solid $turquoise;
+		color: $turquoise;
+	}
+
+	.test {
+		column-count: 2;
+	}
+}

@@ -25,7 +25,9 @@ function GameStatus(props) {
 	return (
 		<Row>
 			<Col>
-				<h1>Choose your next Pokemon! Lvl {level}</h1>
+				<h1 className='whiteText textCenter'>
+					Choose your next card! Lvl {level}
+				</h1>
 			</Col>
 		</Row>
 	);
