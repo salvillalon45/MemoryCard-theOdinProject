@@ -16,6 +16,7 @@ import PropTypes from 'prop-types';
 import Header from '../Header';
 import Footer from '../Footer';
 import MemoryGame from '../MemoryGame';
+import SEO from '../Seo/Seo';
 // -----------------------------------------------
 
 function Layout({ children }) {
@@ -24,6 +25,8 @@ function Layout({ children }) {
 
 	return (
 		<>
+			<SEO title='The Odin Project: Memory Card' />
+
 			<Header currentScore={currentScore} bestScore={bestScore} />
 
 			<MemoryGame
