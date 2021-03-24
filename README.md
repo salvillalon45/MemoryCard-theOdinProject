@@ -11,6 +11,8 @@
     -   Use Gatsby to get familiar with this framework
     -   Continue using Sass
 
+-   You can find the project here: [http://theodinproject_sv_memorygame.surge.sh/](http://theodinproject_sv_memorygame.surge.sh/)
+
 -   You can find more on the project here: [The Odin Project - Memory Card](https://www.theodinproject.com/lessons/memory-card)
 
 # Lessons Learned

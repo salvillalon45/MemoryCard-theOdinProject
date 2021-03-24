@@ -85,6 +85,7 @@ function GameBoard(props) {
 		setCards(shuffledCards);
 	}
 
+	// This effect is needed so that we change the column count when the level has change
 	useEffect(() => {
 		if (level === 1) {
 			document.querySelector('.card-columns').classList.add('test');
@@ -99,6 +100,7 @@ function GameBoard(props) {
 		updateCardsIndex(amountOfCards, setCardsIndex);
 	}, [amountOfCards]);
 
+	// This effect activate everytime the user clicks on a card.
 	useEffect(() => {
 		renderCards();
 	}, [cardsIndex]);
@@ -112,7 +114,8 @@ function GameBoard(props) {
 		}
 	}, [checkAdvanceLevel(cardsIndex)]);
 
-	// Used to reset the game
+	// This effect is sed to reset the game. It resets everything so that the user is ready to play
+	// a new game
 	useEffect(() => {
 		if (gameCheck) {
 			props.handleSetAmountOfCards(4);

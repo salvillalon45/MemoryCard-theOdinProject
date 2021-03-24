@@ -10,7 +10,6 @@
 
 // React
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
 // Components
 import Layout from '../components/Layout';
@@ -19,8 +18,6 @@ import Layout from '../components/Layout';
 import '../styles/global.scss';
 // -----------------------------------------------
 
-const IndexPage = () => (
-	<Layout>{/* <SEO title='The Odin Project: Memory Card' /> */}</Layout>
-);
+const IndexPage = () => <Layout />;
 
 export default IndexPage;

@@ -10,7 +10,6 @@
 
 // React
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 
 // Components
 import Header from '../Header';
@@ -19,7 +18,7 @@ import MemoryGame from '../MemoryGame';
 import SEO from '../Seo/Seo';
 // -----------------------------------------------
 
-function Layout({ children }) {
+function Layout() {
 	const [currentScore, setCurrentScore] = useState(0);
 	const [bestScore, setBestScore] = useState(0);
 
@@ -40,9 +39,5 @@ function Layout({ children }) {
 		</>
 	);
 }
-
-Layout.propTypes = {
-	children: PropTypes.node.isRequired
-};
 
 export default Layout;

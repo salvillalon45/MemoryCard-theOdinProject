@@ -10,7 +10,6 @@
 
 // React
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 
 // Components
 import GameBoard from './GameBoard';

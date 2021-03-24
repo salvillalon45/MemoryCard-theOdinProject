@@ -1,3 +1,10 @@
+// -----------------------------------------------
+//
+// MemoryGame -> MemoryGameUtil.js
+// Desc: Helper functions for the game
+//
+// -----------------------------------------------
+
 function createCardsState(level) {
 	const cardObj = {};
 

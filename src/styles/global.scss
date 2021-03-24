@@ -1,12 +1,11 @@
-/* ----------------------------------------------- */
-/* 
-/* Styling for the entire app */
-/* 
-/* ----------------------------------------------- */
+// -----------------------------------------------
+//
+// Styling for the entire app
+//
+// -----------------------------------------------
 
-/* Fonts */
-/* ----------------------------------------------- */
-// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Source+Sans+Pro&display=swap');
+// Fonts
+// -----------------------------------------------
 
 // Color Variables
 // -----------------------------------------------
@@ -16,8 +15,8 @@ $black: #111029;
 $yellow: #d1da0e;
 $turquoiseHover: #2fc2b9;
 
-/* Components */
-/* ----------------------------------------------- */
+// Components
+// -----------------------------------------------
 @import '../components/components.scss';
 
 html,
@@ -45,8 +44,8 @@ main {
 	flex: 1 0 auto;
 }
 
-/* Text Styling and Colors */
-/* ----------------------------------------------- */
+// Text Styling and Colors
+// -----------------------------------------------
 .whiteText {
 	color: $white;
 }
@@ -63,8 +62,8 @@ main {
 	text-align: center;
 }
 
-/* Text Sizes */
-/* ----------------------------------------------- */
+// Text Sizes
+// -----------------------------------------------
 .xLarge {
 	font-size: x-large;
 }
@@ -77,8 +76,8 @@ main {
 	font-size: xxx-large;
 }
 
-/* Buttons */
-/* ----------------------------------------------- */
+// Buttons
+// -----------------------------------------------
 .btn-primary.disabled,
 .btn-primary:disabled,
 .btn-primary:not(:disabled):not(.disabled):active:focus,
