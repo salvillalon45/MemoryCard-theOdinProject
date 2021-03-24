@@ -17,6 +17,8 @@
 
 # Lessons Learned
 
+0. I pushed myself to learn Gatsby! I heard of this framework and this has been my first exposure to it! It is great. I really like how it simplifies the Metadata of the website that allows it be configured easily. I know there are so many benefits to it. I will learn more about it.
+
 1. Used Dribbel to get inspiration for the fonts and design of the web app. [Inspiration from Craftverse Website Design](https://dribbble.com/shots/15316438-Craftverse-Website-Design). This lead me to creating a style guide.
 
     - ## 📗 Fonts used
