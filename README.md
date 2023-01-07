@@ -25,14 +25,13 @@
 
         - Segoe UI
 
-    - ## 🎨 Color Reference
-
-        | Color           | Hex                                                                |
-        | --------------- | ------------------------------------------------------------------ |
-        | Turquoise       | ![#2cd1c7](https://via.placeholder.com/10/2cd1c7?text=+) `#2cd1c7` |
-        | Black           | ![#111029](https://via.placeholder.com/10/111029?text=+) `#111029` |
-        | Yellow          | ![#d1da0e](https://via.placeholder.com/10/d1da0e?text=+) `#d1da0e` |
-        | Turquoise Hover | ![#2fc2b9](https://via.placeholder.com/10/2fc2b9?text=+) `#2fc2b9` |
+    - ## 🎨 Color Reference	
+    | Color            | Hex                                                                |
+    | ---------------- | ------------------------------------------------------------------ |
+    | Turquoise        | ![#2cd1c7](https://placehold.co/15x15/2cd1c7/2cd1c7.png) `#2cd1c7` |
+    | Black            | ![#111029](https://placehold.co/15x15/111029/111029.png) `#111029` |
+    | Yellow           | ![#d1da0e](https://placehold.co/15x15/d1da0e/d1da0e.png) `#d1da0e` |
+    | Turquoise Hover  | ![#2fc2b9](https://placehold.co/15x15/2fc2b9/2fc2b9.png) `#2fc2b9` |
 
 2. I learned how useState replaces, it never merges. This explains why during my previous projects i had to do the following. I had to do it like this since if I did not include '...resumeData' it will just replace the data!
 
