@@ -9,10 +9,9 @@
     -   In using semantic tags since I wanted to start creating good accessibility habits
     -   Use Gatsby to get familiar with this framework
     -   Continue using Sass
-
--   You can find the project here: http://theodinproject_sv_memorygame.surge.sh/
-
--   You can find more on the project here: [The Odin Project - Memory Card](https://www.theodinproject.com/lessons/memory-card)
+    
+- Project Task: [The Odin Project - Memory Card](https://www.theodinproject.com/lessons/memory-card)
+- View Project: http://theodinproject_sv_memorygame.surge.sh/
 
 ### Demo
 <img alt="Memory Card Demo" src="./memory_card.gif" width="600" />
